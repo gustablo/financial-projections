@@ -1,0 +1,25 @@
+<%= form_with(model: @expense) do |form| %>
+
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :amount %>
+        <%= form.number_field :amount, step: :any %>
+    </div>
+
+    <div>
+        <%= form.label :fixed %>
+        <%= form.check_box :fixed %>
+    </div>
+
+    <div>
+        <%= form.label :payed_at %>
+        <%= form.date_field :payed_at, :value => Time.now.strftime('%Y-%m-%d') %>
+    </div>
+
+    <%= form.submit %>
+
+<% end %>
